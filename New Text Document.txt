@@ -1,0 +1,24 @@
+import wikipedia as wi
+import speech_recognition as sr
+import pyttsx3 as p
+
+def voice(string):
+    name_in = p.init()
+    name_in.say("Hello {}!! Happy to Help You.".format(string))
+    name_in.say("Spack")
+    name_in.runAndWait()
+def Ass():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        audio = r.listen(source)
+        text = r.recognize_google(audio)
+    return text
+def search(string):
+    return (wi.summary(string,sentences=10))
+
+name = str(input("Enter your name:"))
+voice(name)
+result = Ass().lower()
+wiki_result = search(result)
+print(wiki_result)
+voice(str(wiki_result))
