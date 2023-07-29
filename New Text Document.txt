@@ -1,5 +1,5 @@
-import wikipedia as wi
-import speech_recognition as sr
+import wikipedia as wi  """Importing the wikipedia as wi to get the first several lines from the website."""
+import speech_recognition as sr """ Importing speech_recognition to change the voice into text and text in to voice."""
 import pyttsx3 as p
 
 def voice(string):
